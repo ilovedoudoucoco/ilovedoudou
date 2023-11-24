@@ -53,19 +53,15 @@
 </head>
 
 <body onclick="togglePlayback()" class="video-container">
-  <video id="myVideo" loop muted playsinline>
+  <video id="myVideo" loop playsinline>
     <source src="video.mp4" type="video/mp4">
   </video>
-  <audio id="myAudio" loop>
-    <source src="music.mp3" type="audio/mp3">
-  </audio>
   <button class="play-button">
     <span></span>
   </button>
 
   <script>
     var video = document.getElementById('myVideo');
-    var audio = document.getElementById('myAudio');
     var playButton = document.querySelector('.play-button');
     var isPlaying = false;
 
@@ -78,17 +74,13 @@
     }
 
     function play() {
-      console.log("play");
       video.play();
-      audio.play();
       isPlaying = true;
       playButton.style.display = 'none';
     }
 
     function pause() {
-      console.log("pause");
       video.pause();
-      audio.pause();
       isPlaying = false;
       playButton.style.display = 'block';
     }
